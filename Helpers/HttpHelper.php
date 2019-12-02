@@ -116,6 +116,18 @@ class HttpHelper
         return $promise;
     }
 
+    public function getAsync($url)
+    {
+        $promise = $this->client->requestAsync('GET', $url);
+
+        return $promise;
+    }
+
+    public function get($url)
+    {
+        return $this->client->request('GET', $url);
+    }
+
     public function post($url, $data)
     {
         return $this->client->request('POST', $url, $data);
